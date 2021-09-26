@@ -26,30 +26,16 @@ public class ProjectileShooting : MonoBehaviour
     private float projectileCooldown = 10000f;
     private float hitscanCooldown = 10000f;
 
+    public float moveMulti = 500f;
+    public float fireMulti = 500f;
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        beamCooldown += 1f;
-        projectileCooldown += 1f;
-        hitscanCooldown += 1f;
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            doFire = true;
-            doLightning = false;
-            doBeam = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            doFire = false;
-            doLightning = true;
-            doBeam = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            doFire = false;
-            doLightning = false;
-            doBeam = true;
-        }
+        beamCooldown += 1f * Time.deltaTime * fireMulti;
+        projectileCooldown += 1f * Time.deltaTime * fireMulti;
+        hitscanCooldown += 1f * Time.deltaTime * fireMulti;
+        
         if (Input.GetKey(KeyCode.Mouse0))
         {
             if (doFire)
@@ -58,7 +44,7 @@ public class ProjectileShooting : MonoBehaviour
                 {
                     projectileCooldown = 0f;
                     var projectileInstance = Instantiate(projectile, cam.transform.position, cam.rotation) as GameObject;
-                    projectileInstance.GetComponent<Rigidbody>().velocity = cam.forward * projectileSpeed;
+                    projectileInstance.GetComponent<Rigidbody>().velocity = cam.forward * projectileSpeed * Time.deltaTime * moveMulti;
 
                     Physics.IgnoreCollision(projectileInstance.GetComponent<Collider>(), GetComponent<Collider>());
 
@@ -101,6 +87,27 @@ public class ProjectileShooting : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            doFire = true;
+            doLightning = false;
+            doBeam = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            doFire = false;
+            doLightning = true;
+            doBeam = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            doFire = false;
+            doLightning = false;
+            doBeam = true;
         }
     }
 }

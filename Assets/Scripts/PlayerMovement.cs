@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public LayerMask enemyMask;
 
     bool isGrounded;
 
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.LeftShift))
             speed = speed / 1.5f;
 
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) || Physics.CheckSphere(groundCheck.position, groundDistance, enemyMask);
 
         if (isGrounded && velocity.y < 0)
             velocity.y = 0f;
