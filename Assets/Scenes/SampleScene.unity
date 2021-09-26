@@ -3630,15 +3630,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 898230308076572612, guid: 3850bf1177c077149a09afed8687cd56, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.715
+      value: 0.804
       objectReference: {fileID: 0}
     - target: {fileID: 898230308076572612, guid: 3850bf1177c077149a09afed8687cd56, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.262
+      value: 2.22
       objectReference: {fileID: 0}
     - target: {fileID: 898230308076572612, guid: 3850bf1177c077149a09afed8687cd56, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.837
+      value: 0.085
       objectReference: {fileID: 0}
     - target: {fileID: 898230308740891512, guid: 3850bf1177c077149a09afed8687cd56, type: 3}
       propertyPath: m_Name
@@ -3695,6 +3695,10 @@ PrefabInstance:
     - target: {fileID: 898230308740891515, guid: 3850bf1177c077149a09afed8687cd56, type: 3}
       propertyPath: m_Center.y
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 898230308740891516, guid: 3850bf1177c077149a09afed8687cd56, type: 3}
+      propertyPath: hitscanRange
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 898230308740891517, guid: 3850bf1177c077149a09afed8687cd56, type: 3}
       propertyPath: enemyMask.m_Bits
