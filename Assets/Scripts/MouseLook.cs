@@ -34,8 +34,8 @@ public class MouseLook : MonoBehaviour
                 lightOBJ.range = lightRange;
         }
 
-        float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSens * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSens;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSens;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);

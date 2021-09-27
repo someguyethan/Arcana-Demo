@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.16147536, g: 0.11081954, b: 0.15121189, a: 1}
+  m_IndirectSpecularColor: {r: 0.16001585, g: 0.10936894, b: 0.14995602, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3707,6 +3707,10 @@ PrefabInstance:
     - target: {fileID: 898230308980578210, guid: 3850bf1177c077149a09afed8687cd56, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 4294967167
+      objectReference: {fileID: 0}
+    - target: {fileID: 898230308980578212, guid: 3850bf1177c077149a09afed8687cd56, type: 3}
+      propertyPath: mouseSens
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 898230308980578215, guid: 3850bf1177c077149a09afed8687cd56, type: 3}
       propertyPath: m_CustomSkybox
