@@ -23,6 +23,7 @@ public class ProjectileCollision : MonoBehaviour
                 enemy.health -= player.GetComponent<ProjectileShooting>().projectileDamage;
             }
             explosionAOE();
+            SoundManagement.PlaySound("fireball_collide");
             var explosionInstance = Instantiate(explosion, gameObject.GetComponent<Rigidbody>().position, transform.rotation) as GameObject;
             Destroy(explosionInstance, 0.5f);
             collided = true;

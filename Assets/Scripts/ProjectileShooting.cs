@@ -42,6 +42,7 @@ public class ProjectileShooting : MonoBehaviour
             {
                 if (projectileCooldown >= projectileRate)
                 {
+                    SoundManagement.PlaySound("fire_fireball");
                     projectileCooldown = 0f;
                     var projectileInstance = Instantiate(projectile, cam.transform.position, cam.rotation) as GameObject;
                     projectileInstance.GetComponent<Rigidbody>().velocity = cam.forward * projectileSpeed * Time.deltaTime * moveMulti;
@@ -55,6 +56,7 @@ public class ProjectileShooting : MonoBehaviour
             {
                 if (hitscanCooldown >= hitscanRate)
                 {
+                    SoundManagement.PlaySound("fire_lightning");
                     var lightningInstance = Instantiate(lightningEffect, WeaponPos.position, cam.rotation) as GameObject;
                     Destroy(lightningInstance, 0.5f);
                     hitscanCooldown = 0f;
@@ -71,6 +73,7 @@ public class ProjectileShooting : MonoBehaviour
             }
             else if (doBeam)
             {
+                SoundManagement.PlaySound("fire_dray");
                 var beamInstance = Instantiate(beamEffect, WeaponPos.position, cam.rotation) as GameObject;
                 Destroy(beamInstance, 0.5f);
                 if (beamCooldown >= beamRate)
