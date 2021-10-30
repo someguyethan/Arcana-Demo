@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 355034325815642393}
   - component: {fileID: 1958268029649305740}
   - component: {fileID: 7847775307856697212}
+  - component: {fileID: 6095124572086426763}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -80,6 +81,28 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!195 &6095124572086426763
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4470781712013014450}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.25
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.66
+  m_BaseOffset: 0.83
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4470781713486057188
 GameObject:
   m_ObjectHideFlags: 0

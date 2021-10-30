@@ -63,6 +63,7 @@ public class ProjectileShooting : MonoBehaviour
                     RaycastHit hit;
                     if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, hitscanRange))
                     {
+                        SoundManagement.PlaySound("lightning_collide");
                         EnemyContainer enemy = hit.transform.GetComponent<EnemyContainer>();
                         if (enemy != null)
                         {
@@ -82,6 +83,7 @@ public class ProjectileShooting : MonoBehaviour
                     RaycastHit hit;
                     if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, beamRange))
                     {
+                        SoundManagement.PlaySound("dray_collide");
                         EnemyContainer enemy = hit.transform.GetComponent<EnemyContainer>();
                         if (enemy != null)
                         {

@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 898230308740891515}
   - component: {fileID: 898230308740891517}
   - component: {fileID: 898230308740891516}
+  - component: {fileID: -9121663515919980420}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -260,6 +261,25 @@ MonoBehaviour:
   cam: {fileID: 898230308980578213}
   moveMulti: 50
   fireMulti: 200
+--- !u!95 &-9121663515919980420
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898230308740891512}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 7c251d8e5349a06449cc3df06aca617c, type: 3}
+  m_Controller: {fileID: 9100000, guid: 0c44c01feb0405b4785c89d0269b04bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &898230308980578208
 GameObject:
   m_ObjectHideFlags: 0
