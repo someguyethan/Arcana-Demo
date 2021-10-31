@@ -18,6 +18,7 @@ public class ProjectileShooting : MonoBehaviour
     public float hitscanRate = 100f;
     public float beamRate = 10f;
     public Transform cam;
+    public CapsuleCollider col;
 
     private bool doFire = true;
     private bool doLightning = false;
@@ -47,7 +48,7 @@ public class ProjectileShooting : MonoBehaviour
                     var projectileInstance = Instantiate(projectile, cam.transform.position, cam.rotation) as GameObject;
                     projectileInstance.GetComponent<Rigidbody>().velocity = cam.forward * projectileSpeed * Time.deltaTime * moveMulti;
 
-                    Physics.IgnoreCollision(projectileInstance.GetComponent<Collider>(), GetComponent<Collider>());
+                    Physics.IgnoreCollision(projectileInstance.GetComponent<Collider>(), col);
 
                     Destroy(projectileInstance, 10);
                 }
