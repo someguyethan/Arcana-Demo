@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7847775307856697212}
   - component: {fileID: 6095124572086426763}
   - component: {fileID: 4570598885862991030}
+  - component: {fileID: 5126487859394216751}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -116,13 +117,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e5ca5453ee7d04895f5a26ff736d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  friend: {fileID: 0}
-  enemy: {fileID: 0}
   goal: {fileID: 0}
   goalThreshold: 0.1
   sightRange: 10
   sightAngle: 45
   fightRange: 1
+--- !u!95 &5126487859394216751
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4470781712013014450}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 7c251d8e5349a06449cc3df06aca617c, type: 3}
+  m_Controller: {fileID: 9100000, guid: 0c44c01feb0405b4785c89d0269b04bb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4470781713486057188
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f0864bac3aa69f4baa358fbf33e61e0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f0864bac3aa69f4baa358fbf33e61e0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -258,7 +276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f0864bac3aa69f4baa358fbf33e61e0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f0864bac3aa69f4baa358fbf33e61e0, type: 3}
       propertyPath: m_LocalRotation.z
@@ -266,7 +284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f0864bac3aa69f4baa358fbf33e61e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -7571786961723045035, guid: 5f0864bac3aa69f4baa358fbf33e61e0, type: 3}
       propertyPath: m_Materials.Array.data[0]

@@ -707,6 +707,7 @@ MonoBehaviour:
   groundCheck: {fileID: 1532138473415936587}
   canDoubleJump: 1
   puffEffect: {fileID: 7668742666219678966, guid: 3b1099cf495a9a743bdaf097814ebca6, type: 3}
+  anim: {fileID: 8401307317914564919}
 --- !u!114 &4664096769237928584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1257,6 +1258,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 7c251d8e5349a06449cc3df06aca617c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0c44c01feb0405b4785c89d0269b04bb, type: 2}
     - target: {fileID: 6312662189866633950, guid: 7c251d8e5349a06449cc3df06aca617c, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -1350,6 +1355,11 @@ PrefabInstance:
 --- !u!4 &3000936018381170943 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8333749760881611687, guid: 7c251d8e5349a06449cc3df06aca617c, type: 3}
+  m_PrefabInstance: {fileID: 2737596862892557478}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8401307317914564919 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 7c251d8e5349a06449cc3df06aca617c, type: 3}
   m_PrefabInstance: {fileID: 2737596862892557478}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2483555608361575245 stripped

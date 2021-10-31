@@ -47,6 +47,8 @@ public class PlayerMovement_RB : MonoBehaviour
     public bool canDoubleJump = true;
 
     public GameObject puffEffect;
+
+    public Animator anim;
     private bool OnSlope()
     {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.5f))
@@ -80,6 +82,11 @@ public class PlayerMovement_RB : MonoBehaviour
         }
 
         slopeMoveDir = Vector3.ProjectOnPlane(moveDir, slopeHit.normal);
+
+        if (rb.velocity.magnitude > 0.3f)
+            anim.SetTrigger("isWalking");
+        else
+            anim.SetTrigger("isIdle");
     }
 
     void MyInput()
