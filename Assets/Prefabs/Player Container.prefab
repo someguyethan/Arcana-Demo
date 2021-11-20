@@ -247,6 +247,20 @@ CapsuleCollider:
   m_Height: 4.270319
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
+--- !u!136 &4036836888132821566
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2971403812677515767}
+  m_Material: {fileID: 13400000, guid: 652b8268b326e4d44a1511cb02cf7cd7, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 0
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.18, z: 0}
 --- !u!1 &3835295950286070931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1276,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 0c44c01feb0405b4785c89d0269b04bb, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 7c251d8e5349a06449cc3df06aca617c, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6312662189866633950, guid: 7c251d8e5349a06449cc3df06aca617c, type: 3}
       propertyPath: m_Layer
       value: 7
