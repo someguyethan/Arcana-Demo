@@ -49,6 +49,9 @@ public class PlayerMovement_RB : MonoBehaviour
     public GameObject puffEffect;
 
     public Animator anim;
+
+    public Joystick moveStick;
+
     private bool OnSlope()
     {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.5f))
@@ -91,8 +94,8 @@ public class PlayerMovement_RB : MonoBehaviour
 
     void MyInput()
     {
-        horizontalMovement = Input.GetAxisRaw("Horizontal");
-        verticalMovement = Input.GetAxisRaw("Vertical");
+        horizontalMovement = moveStick.Horizontal;
+        verticalMovement = moveStick.Vertical;
 
         moveDir = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
     }
