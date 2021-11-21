@@ -7,6 +7,6 @@ public class MainMenuScript : MonoBehaviour
 {
     public void ButtonClick()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("DemoScene");
     }
 }

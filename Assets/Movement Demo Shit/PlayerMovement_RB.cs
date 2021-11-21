@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement_RB : MonoBehaviour
 {
@@ -99,7 +100,7 @@ public class PlayerMovement_RB : MonoBehaviour
 
         moveDir = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
     }
-    void Jump()
+    public void Jump()
     {
         if (isGrounded)
         {

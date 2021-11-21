@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProjectileShooting : MonoBehaviour
 {
@@ -30,70 +31,16 @@ public class ProjectileShooting : MonoBehaviour
     public float moveMulti = 500f;
     public float fireMulti = 500f;
 
+    public Button fireButton;
+
     // Update is called once per frame
     void FixedUpdate()
     {
         beamCooldown += 1f * Time.deltaTime * fireMulti;
         projectileCooldown += 1f * Time.deltaTime * fireMulti;
         hitscanCooldown += 1f * Time.deltaTime * fireMulti;
-        
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            if (doFire)
-            {
-                if (projectileCooldown >= projectileRate)
-                {
-                    SoundManagement.PlaySound("fire_fireball");
-                    projectileCooldown = 0f;
-                    var projectileInstance = Instantiate(projectile, cam.transform.position, cam.rotation) as GameObject;
-                    projectileInstance.GetComponent<Rigidbody>().velocity = cam.forward * projectileSpeed * Time.deltaTime * moveMulti;
 
-                    Physics.IgnoreCollision(projectileInstance.GetComponent<Collider>(), col);
-
-                    Destroy(projectileInstance, 10);
-                }
-            }
-            else if (doLightning)
-            {
-                if (hitscanCooldown >= hitscanRate)
-                {
-                    SoundManagement.PlaySound("fire_lightning");
-                    var lightningInstance = Instantiate(lightningEffect, WeaponPos.position, cam.rotation) as GameObject;
-                    Destroy(lightningInstance, 0.5f);
-                    hitscanCooldown = 0f;
-                    RaycastHit hit;
-                    if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, hitscanRange))
-                    {
-                        SoundManagement.PlaySound("lightning_collide");
-                        EnemyContainer enemy = hit.transform.GetComponent<EnemyContainer>();
-                        if (enemy != null)
-                        {
-                            enemy.TakeDamage(hitscanDamage);
-                        }
-                    }
-                }
-            }
-            else if (doBeam)
-            {
-                SoundManagement.PlaySound("fire_dray");
-                var beamInstance = Instantiate(beamEffect, WeaponPos.position, cam.rotation) as GameObject;
-                Destroy(beamInstance, 0.5f);
-                if (beamCooldown >= beamRate)
-                {
-                    beamCooldown = 0f;
-                    RaycastHit hit;
-                    if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, beamRange))
-                    {
-                        SoundManagement.PlaySound("dray_collide");
-                        EnemyContainer enemy = hit.transform.GetComponent<EnemyContainer>();
-                        if (enemy != null)
-                        {
-                            enemy.TakeDamage(beamDamage);
-                        }
-                    }
-                }
-            }
-        }
+        fireButton.onClick.AddListener(DoShoot);
     }
     void Update()
     {
@@ -114,6 +61,82 @@ public class ProjectileShooting : MonoBehaviour
             doFire = false;
             doLightning = false;
             doBeam = true;
+        }
+    }
+    public void SwitchFireball()
+    {
+        doFire = true;
+        doLightning = false;
+        doBeam = false;
+    }
+    public void SwitchLightning()
+    {
+        doFire = false;
+        doLightning = true;
+        doBeam = false;
+    }
+    public void SwitchBeam()
+    {
+        doFire = false;
+        doLightning = false;
+        doBeam = true;
+    }
+
+    public void DoShoot()
+    {
+        if (doFire)
+        {
+            if (projectileCooldown >= projectileRate)
+            {
+                SoundManagement.PlaySound("fire_fireball");
+                projectileCooldown = 0f;
+                var projectileInstance = Instantiate(projectile, cam.transform.position, cam.rotation) as GameObject;
+                projectileInstance.GetComponent<Rigidbody>().velocity = cam.forward * projectileSpeed * Time.deltaTime * moveMulti;
+
+                Physics.IgnoreCollision(projectileInstance.GetComponent<Collider>(), col);
+
+                Destroy(projectileInstance, 10);
+            }
+        }
+        else if (doLightning)
+        {
+            if (hitscanCooldown >= hitscanRate)
+            {
+                SoundManagement.PlaySound("fire_lightning");
+                var lightningInstance = Instantiate(lightningEffect, WeaponPos.position, cam.rotation) as GameObject;
+                Destroy(lightningInstance, 0.5f);
+                hitscanCooldown = 0f;
+                RaycastHit hit;
+                if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, hitscanRange))
+                {
+                    SoundManagement.PlaySound("lightning_collide");
+                    EnemyContainer enemy = hit.transform.GetComponent<EnemyContainer>();
+                    if (enemy != null)
+                    {
+                        enemy.TakeDamage(hitscanDamage);
+                    }
+                }
+            }
+        }
+        else if (doBeam)
+        {
+            SoundManagement.PlaySound("fire_dray");
+            var beamInstance = Instantiate(beamEffect, WeaponPos.position, cam.rotation) as GameObject;
+            Destroy(beamInstance, 0.5f);
+            if (beamCooldown >= beamRate)
+            {
+                beamCooldown = 0f;
+                RaycastHit hit;
+                if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, beamRange))
+                {
+                    SoundManagement.PlaySound("dray_collide");
+                    EnemyContainer enemy = hit.transform.GetComponent<EnemyContainer>();
+                    if (enemy != null)
+                    {
+                        enemy.TakeDamage(beamDamage);
+                    }
+                }
+            }
         }
     }
 }
