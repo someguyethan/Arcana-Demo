@@ -20,7 +20,7 @@ public class ProjectileCollision : MonoBehaviour
             if (collision.gameObject.tag == "Enemy")
             {
                 EnemyContainer enemy = collision.gameObject.GetComponent<EnemyContainer>();
-                enemy.health -= player.GetComponent<ProjectileShooting>().projectileDamage;
+                enemy.TakeDamage(player.GetComponent<ProjectileShooting>().projectileDamage);
             }
             explosionAOE();
             SoundManagement.PlaySound("fireball_collide");
@@ -42,7 +42,7 @@ public class ProjectileCollision : MonoBehaviour
                 //float damage = player.GetComponent<ProjectileShooting>().projectileDamage;
                 float damage = calculateDamage(Vector3.Distance(gameObject.GetComponent<Rigidbody>().position, c.transform.position),
                                                player.GetComponent<ProjectileShooting>().projectileDamage);
-                enemy.health -= damage;
+                enemy.TakeDamage(damage);
             }
         }
     }

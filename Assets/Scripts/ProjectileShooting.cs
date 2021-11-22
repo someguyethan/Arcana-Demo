@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ProjectileShooting : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class ProjectileShooting : MonoBehaviour
 
     public Button fireButton;
 
+    bool fireButtonDown = false;
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -40,7 +43,8 @@ public class ProjectileShooting : MonoBehaviour
         projectileCooldown += 1f * Time.deltaTime * fireMulti;
         hitscanCooldown += 1f * Time.deltaTime * fireMulti;
 
-        fireButton.onClick.AddListener(DoShoot);
+        if (fireButtonDown)
+            DoShoot();
     }
     void Update()
     {
@@ -138,5 +142,13 @@ public class ProjectileShooting : MonoBehaviour
                 }
             }
         }
+    }
+    public void OnDown()
+    {
+        fireButtonDown = true;
+    }
+    public void OnUp()
+    {
+        fireButtonDown = false;
     }
 }

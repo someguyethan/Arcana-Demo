@@ -233,11 +233,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 163
+      value: 102
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 152
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 53792305}
   - component: {fileID: 53792304}
   - component: {fileID: 53792303}
+  - component: {fileID: 53792306}
   m_Layer: 5
   m_Name: Fire
   m_TagString: Untagged
@@ -531,6 +532,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53792301}
   m_CullTransparentMesh: 1
+--- !u!114 &53792306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53792301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 213004527}
+          m_TargetAssemblyTypeName: ProjectileShooting, Assembly-CSharp
+          m_MethodName: OnUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 213004527}
+          m_TargetAssemblyTypeName: ProjectileShooting, Assembly-CSharp
+          m_MethodName: OnDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &144935739
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,19 +761,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 251583003}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1264761850}
-        m_TargetAssemblyTypeName: GrappleHook, Assembly-CSharp
-        m_MethodName: StartGrapple
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &251583003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -786,6 +820,22 @@ MonoBehaviour:
         - m_Target: {fileID: 1264761850}
           m_TargetAssemblyTypeName: GrappleHook, Assembly-CSharp
           m_MethodName: StopGrapple
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1264761850}
+          m_TargetAssemblyTypeName: GrappleHook, Assembly-CSharp
+          m_MethodName: StartGrapple
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -962,6 +1012,7 @@ GameObject:
   - component: {fileID: 285279427}
   - component: {fileID: 285279426}
   - component: {fileID: 285279425}
+  - component: {fileID: 285279428}
   m_Layer: 5
   m_Name: Fireball
   m_TagString: Untagged
@@ -1032,19 +1083,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 285279426}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 213004527}
-        m_TargetAssemblyTypeName: ProjectileShooting, Assembly-CSharp
-        m_MethodName: SwitchFireball
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &285279426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,6 +1122,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285279423}
   m_CullTransparentMesh: 1
+--- !u!114 &285279428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285279423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 213004527}
+          m_TargetAssemblyTypeName: ProjectileShooting, Assembly-CSharp
+          m_MethodName: SwitchFireball
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &342748549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7, type: 3}
@@ -1165,7 +1233,7 @@ PrefabInstance:
       objectReference: {fileID: 53792303}
     - target: {fileID: 6458573990355850318, guid: ec5ec0a063bf61e41a4b037755033947, type: 3}
       propertyPath: projectileSpeed
-      value: 150
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7260999965716494703, guid: ec5ec0a063bf61e41a4b037755033947, type: 3}
       propertyPath: vignette
@@ -1759,6 +1827,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1365059498}
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: hitmarkerPos
+      value: 
+      objectReference: {fileID: 262901869}
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: hitmarkerPrefab
+      value: 
+      objectReference: {fileID: 3280007846515438011, guid: f0517958772315e469d11283746fd42d, type: 3}
     - target: {fileID: 4470781712013014450, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -1905,6 +1985,7 @@ GameObject:
   - component: {fileID: 924342723}
   - component: {fileID: 924342722}
   - component: {fileID: 924342721}
+  - component: {fileID: 924342724}
   m_Layer: 5
   m_Name: Jump
   m_TagString: Untagged
@@ -1975,19 +2056,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 924342722}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 213004530}
-        m_TargetAssemblyTypeName: PlayerMovement_RB, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &924342722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,6 +2095,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924342719}
   m_CullTransparentMesh: 1
+--- !u!114 &924342724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924342719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 213004530}
+          m_TargetAssemblyTypeName: PlayerMovement_RB, Assembly-CSharp
+          m_MethodName: Jump
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &929449791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2094,6 +2192,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1365059498}
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: hitmarkerPos
+      value: 
+      objectReference: {fileID: 262901869}
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: hitmarkerPrefab
+      value: 
+      objectReference: {fileID: 3280007846515438011, guid: f0517958772315e469d11283746fd42d, type: 3}
     - target: {fileID: 4470781712013014450, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
       propertyPath: m_Name
       value: Enemy (3)
@@ -2738,6 +2848,7 @@ GameObject:
   - component: {fileID: 1478470311}
   - component: {fileID: 1478470310}
   - component: {fileID: 1478470309}
+  - component: {fileID: 1478470312}
   m_Layer: 5
   m_Name: Beam
   m_TagString: Untagged
@@ -2808,19 +2919,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1478470310}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 213004527}
-        m_TargetAssemblyTypeName: ProjectileShooting, Assembly-CSharp
-        m_MethodName: SwitchBeam
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1478470310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2859,6 +2958,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478470307}
   m_CullTransparentMesh: 1
+--- !u!114 &1478470312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478470307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 213004527}
+          m_TargetAssemblyTypeName: ProjectileShooting, Assembly-CSharp
+          m_MethodName: SwitchBeam
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1499058511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,6 +3095,7 @@ GameObject:
   - component: {fileID: 1725965196}
   - component: {fileID: 1725965195}
   - component: {fileID: 1725965194}
+  - component: {fileID: 1725965197}
   m_Layer: 5
   m_Name: Lightning
   m_TagString: Untagged
@@ -3037,19 +3166,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1725965195}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 213004527}
-        m_TargetAssemblyTypeName: ProjectileShooting, Assembly-CSharp
-        m_MethodName: SwitchLightning
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1725965195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3088,6 +3205,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725965192}
   m_CullTransparentMesh: 1
+--- !u!114 &1725965197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725965192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 213004527}
+          m_TargetAssemblyTypeName: ProjectileShooting, Assembly-CSharp
+          m_MethodName: SwitchLightning
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1732408602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3095,6 +3241,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1365059498}
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: hitmarkerPos
+      value: 
+      objectReference: {fileID: 262901869}
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: hitmarkerPrefab
+      value: 
+      objectReference: {fileID: 3280007846515438011, guid: f0517958772315e469d11283746fd42d, type: 3}
     - target: {fileID: 4470781712013014450, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
@@ -3496,6 +3654,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1365059498}
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: hitmarkerPos
+      value: 
+      objectReference: {fileID: 262901869}
+    - target: {fileID: 1958268029649305740, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
+      propertyPath: hitmarkerPrefab
+      value: 
+      objectReference: {fileID: 3280007846515438011, guid: f0517958772315e469d11283746fd42d, type: 3}
     - target: {fileID: 4470781712013014450, guid: a7e7c2c0db5857040aa5ff702cf9cf2c, type: 3}
       propertyPath: m_Name
       value: Enemy
