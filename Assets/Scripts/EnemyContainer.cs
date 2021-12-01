@@ -10,11 +10,17 @@ public class EnemyContainer : MonoBehaviour
     public Transform hitmarkerPos;
     public Canvas canvas;
 
+    public GameObject[] spawnLocations;
+
     // Update is called once per frame
     void Update()
     {
         if (health <= 0)
-            Destroy(gameObject);
+        {
+            this.gameObject.transform.position = spawnLocations[Random.Range(0,4)].transform.position;
+            ScoreTracker.Instance.score += 100f;
+            health = 100f;
+        }
     }
 
     public void TakeDamage(float damage)
